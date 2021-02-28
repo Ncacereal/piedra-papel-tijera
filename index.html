@@ -20,42 +20,42 @@
         }
 
         function ronda(jugador, computadora){
-            computadora.toLocaleLowerCase();
+            computadora =computadora.toLocaleLowerCase();
             if(jugador == computadora){
-                console.log("Empate!")
+                console.log("Empate!");
                 return 0;
             }
             else{
                 if (jugador == "piedra"){
-                    if (computadora = "papel")
+                    if (computadora == "papel")
                     {
                         console.log("Perdiste! El Papel le gana a la Piedra.");
                         return -1;
                     }
                     else{
-                        console.log("Ganaste! La Piedra le gana a la Tijera.")
+                        console.log("Ganaste! La Piedra le gana a la Tijera.");
                         return 1;
                     }
                 }
-                    if (jugador == "papel"){
-                    if (computadora = "tijera")
+                if (jugador == "papel"){
+                    if (computadora == "tijera")
                     {
                         console.log("Perdiste! La Tijera le gana al Papel.");
                         return -1;
                     }
                     else{
-                        console.log("Ganaste! El Papel le gana a la Piedra.")
+                        console.log("Ganaste! El Papel le gana a la Piedra.");
                         return 1;
                     }
                 }
-                    if (jugador == "tijera"){
-                    if (computadora = "piedra")
+                if (jugador == "tijera"){
+                    if (computadora == "piedra")
                     {
                         console.log("Perdiste! La Piedra le gana a la Tijera.");
                         return -1;
                     }
                     else{
-                        console.log("Ganaste! La Tijera le gana al Papel.")
+                        console.log("Ganaste! La Tijera le gana al Papel.");
                         return 1;
                     }
                 }
@@ -69,6 +69,7 @@
                 var computadora = eleccionMaquina();
                 var jugador = eleccionJugador();
                 console.log("La Computadora eligió " + computadora);
+                console.log("Tu elegiste " + jugador);
                 ganador += ronda(jugador,computadora);
                 console.log(ganador);
             }
