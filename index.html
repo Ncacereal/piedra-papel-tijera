@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function eleccionMaquina(){
+            const valores = ["Piedra", "Papel", "Tijera"];
+            var i = Math.floor(Math.random() * valores.length);
+            return valores[i];
+        }
+
+        function eleccionJugador(){
+            var valor = prompt("¿Piedra, Papel o Tijera?");
+            return valor.toLocaleLowerCase()
+        }
+
+        function ronda(jugador, computadora){
+            computadora.toLocaleLowerCase();
+            if(jugador == computadora){
+                console.log("Empate!")
+                return 0;
+            }
+            else{
+                if (jugador == "piedra"){
+                    if (computadora = "papel")
+                    {
+                        console.log("Perdiste! El Papel le gana a la Piedra.");
+                        return -1;
+                    }
+                    else{
+                        console.log("Ganaste! La Piedra le gana a la Tijera.")
+                        return 1;
+                    }
+                }
+                    if (jugador == "papel"){
+                    if (computadora = "tijera")
+                    {
+                        console.log("Perdiste! La Tijera le gana al Papel.");
+                        return -1;
+                    }
+                    else{
+                        console.log("Ganaste! El Papel le gana a la Piedra.")
+                        return 1;
+                    }
+                }
+                    if (jugador == "tijera"){
+                    if (computadora = "piedra")
+                    {
+                        console.log("Perdiste! La Piedra le gana a la Tijera.");
+                        return -1;
+                    }
+                    else{
+                        console.log("Ganaste! La Tijera le gana al Papel.")
+                        return 1;
+                    }
+                }
+            }
+        }
+
+        function juego(){
+            var i;
+            var ganador = 0;
+            for (i = 0; i <5; i++){
+                var computadora = eleccionMaquina();
+                var jugador = eleccionJugador();
+                console.log("La Computadora eligió " + computadora);
+                ganador += ronda(jugador,computadora);
+                console.log(ganador);
+            }
+            if (ganador == 0){
+                console.log("Empate")
+            }
+            else {
+                if(ganador > 0){
+                console.log("Ganaste!")
+                }
+                else{
+                    console.log("Perdiste!")
+                }
+            }
+        }
+    juego();
+    </script>
+</body>
+</html>
